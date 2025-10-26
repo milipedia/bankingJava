@@ -1,4 +1,4 @@
-# 🏦 Banco Milipedia
+# 🏦 javaBanking
 
 ![Java](https://img.shields.io/badge/Java-17+-orange)
 ![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow)
@@ -11,8 +11,6 @@ Permite criar contas, realizar saques, depósitos, transferências e consultar e
 ---
 
 ## 🌟 Demonstração
-
-🏦 Bem-vindo ao Banco Milipedia!
 
 ==== MENU PRINCIPAL ====
 1 - Criar nova conta

@@ -11,7 +11,7 @@ Permite criar contas, realizar saques, depósitos, transferências e consultar e
 ---
 
 ## 🌟 Demonstração
-
+```
 ==== MENU PRINCIPAL ====
 1 - Criar nova conta
 2 - Depositar
@@ -31,7 +31,7 @@ Tipo de conta:
 2 - Conta Black
 Escolha: 2
 ✅ Conta criada com sucesso! Número: 1
-
+```
 ---
 
 ## 🧩 Estrutura do Projeto

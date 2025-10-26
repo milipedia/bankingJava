@@ -1,3 +1,5 @@
+package Contas;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ArrayList;
@@ -60,7 +62,7 @@ public class Cliente {
 
     //Método para visualizar os dados do cliente
     public void verDados() {
-        System.out.println("\n--- Dados do Cliente ---");
+        System.out.println("\n--- Dados do Contas.Cliente ---");
         System.out.println("Nome: " + nome);
         System.out.println("CPF: " + cpf);
         System.out.println("Idade: " + idade);
@@ -71,7 +73,7 @@ public class Cliente {
         } else {
             System.out.println("Contas do cliente:");
             for (Conta conta : contas) {
-                System.out.println("- Conta nº " + conta.getNumeroConta() + " (" + conta.getTipoConta() + ")");
+                System.out.println("- Contas.Conta nº " + conta.getNumeroConta() + " (" + conta.getTipoConta() + ")");
             }
         }
     }

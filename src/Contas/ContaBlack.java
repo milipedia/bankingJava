@@ -1,10 +1,12 @@
-public class ContaBlack extends  Conta{
+package Contas;
+
+public class ContaBlack extends Conta {
     private double limiteNegativo = 1000;
     private double cashback = 0.03;
 
     // Construtor
     public ContaBlack(int numeroConta, Cliente clienteTitular) {
-        super(numeroConta, "Conta Black", 0.0, clienteTitular);
+        super(numeroConta, "Contas.Conta Black", 0.0, clienteTitular);
         this.limiteNegativo = 1000;
         this.cashback = 0.03;
     }
@@ -15,8 +17,8 @@ public class ContaBlack extends  Conta{
     public void subtrairSaldo(double valor) {
         if (valor <= saldo + limiteNegativo) {
             saldo -= valor;
-            registrarOperacao("Saque de R$ " + String.format("%.2f", valor) + " realizado (Conta Black)");
-            System.out.println("✅ Saque de R$ " + valor + " realizado com sucesso!");
+            registrarOperacao("Operacoes.Saque de R$ " + String.format("%.2f", valor) + " realizado (Contas.Conta Black)");
+            System.out.println("✅ Operacoes.Saque de R$ " + valor + " realizado com sucesso!");
         } else {
             System.out.println("❌ Saldo insuficiente (limite de R$ " + limiteNegativo + ")");
         }

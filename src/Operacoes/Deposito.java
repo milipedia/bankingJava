@@ -1,3 +1,7 @@
+package Operacoes;
+
+import Contas.Conta;
+
 public class Deposito {
     public void depositar(Conta conta, double valor) {
         if (valor <= 0) { //Evita saque de valor inválido

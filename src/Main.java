@@ -1,3 +1,10 @@
+import Contas.Cliente;
+import Contas.Conta;
+import Contas.ContaBlack;
+import Contas.ContaCorrente;
+import Credito.cartaoCredito;
+import Operacoes.Transferencia;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +31,7 @@ public class Main {
             System.out.println("4 - Transferir");
             System.out.println("5 - Ver extrato");
             System.out.println("6 - Consultar saldo");
+            System.out.println("7 - Solicitar cartão de crédito");
             System.out.println("0 - Sair");
             System.out.print("Escolha uma opção: ");
             int opcao = sc.nextInt();
@@ -40,11 +48,11 @@ public class Main {
                     sc.nextLine();
                     System.out.print("Data de nascimento (AAAA-MM-DD): ");
                     LocalDate data = LocalDate.parse(sc.nextLine());
-                    Cliente cliente = new Cliente(nome, cpf, idade, data); // Criação do objeto Cliente
+                    Cliente cliente = new Cliente(nome, cpf, idade, data); // Criação do objeto Contas.Cliente
 
                     System.out.println("Tipo de conta:");
-                    System.out.println("1 - Conta Corrente");
-                    System.out.println("2 - Conta Black");
+                    System.out.println("1 - Contas.Conta Corrente");
+                    System.out.println("2 - Contas.Conta Black");
                     System.out.print("Escolha: ");
                     int tipo = sc.nextInt();
 
@@ -61,7 +69,7 @@ public class Main {
                     cliente.adicionarConta(conta); //Vincula conta aos cliente
                     contas.add(conta); //Adiciona a conta à lista geral
 
-                    System.out.println("✅ Conta criada com sucesso! Número: " + numeroConta);
+                    System.out.println("✅ Contas.Conta criada com sucesso! Número: " + numeroConta);
                 }
 
                 case 2 -> {
@@ -75,7 +83,7 @@ public class Main {
                         conta.adicionarSaldo(valor);
                         System.out.println("💰 Depósito realizado!");
                     } else {
-                        System.out.println("❌ Conta não encontrada!");
+                        System.out.println("❌ Contas.Conta não encontrada!");
                     }
                 }
 
@@ -89,14 +97,14 @@ public class Main {
                         double valor = sc.nextDouble();
                         conta.subtrairSaldo(valor);
                     } else {
-                        System.out.println("❌ Conta não encontrada!");
+                        System.out.println("❌ Contas.Conta não encontrada!");
                     }
                 }
 
                 case 4 -> {
-                    System.out.print("Conta origem: ");
+                    System.out.print("Contas.Conta origem: ");
                     int origemNum = sc.nextInt();
-                    System.out.print("Conta destino: ");
+                    System.out.print("Contas.Conta destino: ");
                     int destinoNum = sc.nextInt();
                     System.out.print("Valor: R$ ");
                     double valor = sc.nextDouble();
@@ -107,7 +115,7 @@ public class Main {
                     if (origem != null && destino != null) {
                         transferencia.transferir(origem, destino, valor);
                     } else {
-                        System.out.println("❌ Conta inválida!");
+                        System.out.println("❌ Contas.Conta inválida!");
                     }
                 }
 
@@ -118,7 +126,7 @@ public class Main {
                     if (conta != null) {
                         conta.verExtrato();
                     } else {
-                        System.out.println("❌ Conta não encontrada!");
+                        System.out.println("❌ Contas.Conta não encontrada!");
                     }
                 }
 
@@ -129,7 +137,32 @@ public class Main {
                     if (conta != null) {
                         conta.consultarSaldo();
                     } else {
-                        System.out.println("❌ Conta não encontrada!");
+                        System.out.println("❌ Contas.Conta não encontrada!");
+                    }
+                }
+
+                case 7 -> {
+                    System.out.println("Digite o número da conta:");
+                    int numeroConta = sc.nextInt();
+
+                    // Procura a conta correspondente
+                    Conta contaSelecionada = null;
+                    for (Conta c : contas) {
+                        if (c.getNumeroConta() == numeroConta) {
+                            contaSelecionada = c;
+                            break;
+                        }
+                    }
+                    if(contas instanceof ContaBlack){
+                        System.out.println("Limite de crédito disponível para essa conta.");
+                        System.out.println("Qual seu limite ideal?");
+                        Scanner leitura = new Scanner(System.in);
+                        double limite = leitura.nextDouble();
+                        cartaoCredito cartao = new cartaoCredito(limite);
+                        System.out.println("💳 Cartão criado com limite de R$ " + limite);
+
+                    }else{
+                        System.out.println("Limite de crédito não disponível para a modalidade selecionada.");
                     }
                 }
 

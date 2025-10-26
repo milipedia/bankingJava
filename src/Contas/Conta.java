@@ -1,3 +1,4 @@
+package Contas;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -62,7 +63,7 @@ public class Conta {
 
     public void subtrairSaldo(double valor) {
         this.saldo -= valor;
-        registrarOperacao("Saque de R$ " + String.format("%.2f", valor));
+        registrarOperacao("Operacoes.Saque de R$ " + String.format("%.2f", valor));
     }
 
     public void registrarOperacao(String descricao) {
@@ -70,7 +71,7 @@ public class Conta {
     }
 
     public void verExtrato() {
-        System.out.println("\n--- Extrato da Conta " + numeroConta + " ---");
+        System.out.println("\n--- Extrato da Contas.Conta " + numeroConta + " ---");
         if (extrato.isEmpty()) {
             System.out.println("Nenhuma operação registrada.");
         } else {

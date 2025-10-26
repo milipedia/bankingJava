@@ -1,9 +1,11 @@
-public class ContaCorrente  extends Conta{
+package Contas;
+
+public class ContaCorrente  extends Conta {
         private double limiteNegativo = 500;
         private double taxaTransferencia = 0.03;
     // Construtor
     public ContaCorrente(int numeroConta, Cliente clienteTitular) {
-        super(numeroConta, "Conta Corrente", 0.0, clienteTitular);
+        super(numeroConta, "Contas.Conta Corrente", 0.0, clienteTitular);
     }
 
     // Sobrescrevendo o método de saque
@@ -11,8 +13,8 @@ public class ContaCorrente  extends Conta{
     public void subtrairSaldo(double valor) {
         if (valor <= saldo + limiteNegativo) {
             saldo -= valor;
-            registrarOperacao("Saque de R$ " + String.format("%.2f", valor) + " realizado (Conta Corrente)");
-            System.out.println("✅ Saque de R$ " + valor + " realizado com sucesso!");
+            registrarOperacao("Operacoes.Saque de R$ " + String.format("%.2f", valor) + " realizado (Contas.Conta Corrente)");
+            System.out.println("✅ Operacoes.Saque de R$ " + valor + " realizado com sucesso!");
         } else {
             System.out.println("❌ Saldo insuficiente (limite de R$ " + limiteNegativo + ")");
         }

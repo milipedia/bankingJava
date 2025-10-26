@@ -1,10 +1,12 @@
-public class ContaPoupanca extends Conta{
+package Contas;
+
+public class ContaPoupanca extends Conta {
     private double taxaRendimento = 0.006; // 0,6% ao mês
     private double taxaSaque = 0.1; // taxa fixa opcional por saque
 
     //Construtor
     public ContaPoupanca(int numeroConta, Cliente clienteTitular) {
-        super(numeroConta, "Conta Poupança", 0.0, clienteTitular);
+        super(numeroConta, "Contas.Conta Poupança", 0.0, clienteTitular);
     }
 
     //Sobrescrevendo o método de saque
@@ -13,9 +15,9 @@ public class ContaPoupanca extends Conta{
         double valorComTaxa = valor + taxaSaque;
         if (saldo >= valorComTaxa) {
             saldo -= valorComTaxa;
-            registrarOperacao("Saque de R$ " + String.format("%.2f", valor) +
+            registrarOperacao("Operacoes.Saque de R$ " + String.format("%.2f", valor) +
                     " + taxa de R$ " + String.format("%.2f", taxaSaque));
-            System.out.println("💸 Saque realizado: R$ " + valor + " (taxa R$ " + taxaSaque + ")");
+            System.out.println("💸 Operacoes.Saque realizado: R$ " + valor + " (taxa R$ " + taxaSaque + ")");
         } else {
             System.out.println("❌ Saldo insuficiente para saque e taxa.");
         }

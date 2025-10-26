@@ -1,7 +1,8 @@
-import java.time.LocalDate;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Scanner;
+package Operacoes;
+
+import Contas.Conta;
+import Contas.ContaBlack;
+import Contas.ContaCorrente;
 
 public class Transferencia {
     public void transferir(Conta contaOrigem, Conta contaDestino, double valor) {
@@ -15,12 +16,12 @@ public class Transferencia {
         if(contaOrigem instanceof ContaCorrente){
             taxa = valor * 0.003;
             valorFinal += taxa;
-            System.out.println("💸 Taxa de transferência (Conta Corrente): R$ " + String.format("%.2f", taxa));
+            System.out.println("💸 Taxa de transferência (Contas.Conta Corrente): R$ " + String.format("%.2f", taxa));
         } else if (contaOrigem instanceof ContaBlack) {
             double cashback = 0.01;
             contaOrigem.adicionarSaldo(cashback);
             contaOrigem.registrarOperacao("💰 Cashback recebido: R$ " + String.format("%.2f", cashback));
-            System.out.println("🎁 Cashback de R$ " + String.format("%.2f", cashback) + " aplicado (Conta Black).");
+            System.out.println("🎁 Cashback de R$ " + String.format("%.2f", cashback) + " aplicado (Contas.Conta Black).");
         }
 
         if(contaOrigem.getSaldo() < valorFinal){

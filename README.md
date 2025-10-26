@@ -35,7 +35,7 @@ Escolha: 2
 ---
 
 ## 🧩 Estrutura do Projeto
-
+```
 📂 src/
 ┣ 📜 Main.java → Menu principal e lógica do programa
 ┣ 📜 Cliente.java → Representa o cliente do banco
@@ -43,7 +43,7 @@ Escolha: 2
 ┣ 📜 ContaCorrente.java → Conta comum com limite básico
 ┣ 📜 ContaBlack.java → Conta premium com cashback e limite maior
 ┣ 📜 Transferencia.java → Responsável pelas operações de transferência
-
+```
 ---
 
 ## ⚙️ Funcionalidades

@@ -51,8 +51,8 @@ public class Main {
                     Cliente cliente = new Cliente(nome, cpf, idade, data); // Criação do objeto Contas.Cliente
 
                     System.out.println("Tipo de conta:");
-                    System.out.println("1 - Contas.Conta Corrente");
-                    System.out.println("2 - Contas.Conta Black");
+                    System.out.println("1 - Conta Corrente");
+                    System.out.println("2 - Conta Black");
                     System.out.print("Escolha: ");
                     int tipo = sc.nextInt();
 

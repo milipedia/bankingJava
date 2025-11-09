@@ -9,6 +9,7 @@ public class Cliente {
     private String cpf;
     private int idade;
     private LocalDate dataDeNascimento;
+    private String senha;
     private List<Conta> contas = new ArrayList<>();
 
     //Getters e Setters
@@ -53,11 +54,16 @@ public class Cliente {
     }
 
     //Construtor
-    public Cliente(String nome, String cpf, int idade, LocalDate dataDeNascimento) {
+    public Cliente(String nome, String cpf, int idade, LocalDate dataDeNascimento, String senha) {
         this.nome = nome;
         this.cpf = cpf;
         this.idade = idade;
         this.dataDeNascimento = dataDeNascimento;
+        this.senha = senha;
+    }
+
+    public boolean autenticar(String senhaDigitada){
+        return this.senha.equals(senhaDigitada);
     }
 
     //Método para visualizar os dados do cliente

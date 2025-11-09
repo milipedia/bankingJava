@@ -114,7 +114,7 @@ Bia
 Estudante de Engenharia de Software
 Apaixonada por tecnologia, lógica e desenvolvimento de software.
 
-📫 LinkedIn ([adicione aqui o link do teu perfil!](https://www.linkedin.com/in/silva-bianca))
+📫 LinkedIn ([Bianca Silva!](https://www.linkedin.com/in/silva-bianca))
 
 💡 Ideias futuras
 Persistência de dados em arquivo .json ou .txt
